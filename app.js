@@ -3,6 +3,7 @@
 var express = require( 'express' );
 var app = express();
 var bodyParser = require( 'body-parser' );
+app.use(bodyParser.urlencoded({limit: 100*1024*1024, extended: true}));
 var config = require( './config/config.json' );
 
 for ( var item in config ) {
